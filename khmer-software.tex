@@ -66,35 +66,80 @@
 % Title must be 150 characters or less
 \begin{flushleft}
 {\Large
-\textbf{Title}
+\textbf{The khmer software package: enabling efficient sequence analysis}
 }
 % Insert Author names, affiliations and corresponding author email.
 \\
-Author1$^{1}$, 
-Author2$^{2}$, 
-Author3$^{3,\ast}$
+
+Michael R. Crusoe, Greg Edvenson, Jordan Fish, Adina Howe, Eric McDonald, Joshua Nahum, Kaben Nanlohy, Jason Pell, Jared Simpson, Camille Scott, Qingpeng Zhang, and C. Titus Brown$^{\ast}$
 \\
-\bf{1} Author1 Dept/Program/Center, Institution Name, City, State, Country
-\\
-\bf{2} Author2 Dept/Program/Center, Institution Name, City, State, Country
-\\
-\bf{3} Author3 Dept/Program/Center, Institution Name, City, State, Country
-\\
-$\ast$ E-mail: Corresponding author@institute.edu
+$\ast$ E-mail: Corresponding ctb@msu.edu
 \end{flushleft}
 
 % Please keep the abstract between 250 and 300 words
 \section*{Abstract}
 
+The khmer package is a freely available software library for working
+efficiently with fixed length DNA words, or k-mers.  khmer provides
+implementations of a probabilistic k-mer counting data structure,
+a compressible De Bruijn graph representation, De Bruijn graph
+partitioning, and digital normalization.  khmer is implemented in C++
+and Python, and is freely available under the BSD license.
+
 % Please keep the Author Summary between 150 and 200 words
 % Use first person. PLoS ONE authors please skip this step. 
 % Author Summary not valid for PLoS ONE submissions.   
-\section*{Author Summary}
+%\section*{Author Summary}
 
 \section*{Introduction}
 
+The concept of a word of a fixed-length k, or ``k-mer'', is a common
+abstraction in DNA sequence analysis.  With the advent of
+second-generation sequencing and the widespread adoption of De Bruijn
+graph-based assemblers, k-mers became even more widely used.  However,
+the dramatically increased rate of sequence data generation from the
+Roche 454 and the Solexa/Illumina sequencers has challenged the most
+basic data structures and algorithms for k-mer storage and
+manipulation.  This has led to the development of a wide range of data
+structures and algorithms that explore possible improvements to
+k-mer-based approaches.
+
+Here we present version 1.0 of the khmer software package, a
+high-performance library implementing memory- and time-efficient
+algorithms for the manipulation of short-read data sets.  khmer
+contains reference implementations of several approaches, including a
+probabilistic k-mer counter based on the CountMin Sketch @cite, a
+compressible De Bruijn graph representations built on top of Bloom
+filters @cite, and a streaming lossy compression approach for
+short-read data sets termed ``digital normalization.''
+
+khmer is both research software and practical software: it has been
+used in the development of novel data structures and algorithms,
+and it is also immediately useful for certain kinds of data analysis
+(discussed below).
+
+The khmer software consists of a core library implemented in C++,
+a CPython library wrapper implemented in C, and a set of Python
+``driver'' scripts that make use of the library to perform various
+sequence analysis tasks.  The software is currently developed on GitHub
+under github.com/ged-lab/, and it is released under the BSD License.
+
 % Results and Discussion can be combined.
 \section*{Results}
+
+Design
+
+Implementation
+
+K-mer counting
+
+De Bruijn Graph representation and exploration
+
+Digital normalization
+
+Protocols
+
+Pipeline/filter
 
 \subsection*{Subsection 1}
 
