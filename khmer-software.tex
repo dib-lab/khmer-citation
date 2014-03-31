@@ -93,16 +93,16 @@ and Python, and is freely available under the BSD license.
 
 \section*{Introduction}
 
-The concept of a word of a fixed-length k, or ``k-mer'', is a common
-abstraction in DNA sequence analysis.  With the advent of
-second-generation sequencing and the widespread adoption of De Bruijn
-graph-based assemblers, k-mers became even more widely used.  However,
-the dramatically increased rate of sequence data generation from the
-Roche 454 and the Solexa/Illumina sequencers has challenged the most
-basic data structures and algorithms for k-mer storage and
-manipulation.  This has led to the development of a wide range of data
-structures and algorithms that explore possible improvements to
-k-mer-based approaches.
+DNA words of a fixed-length k, or ``k-mer'', is a common abstraction
+in DNA sequence analysis.  With the advent of second-generation
+sequencing and the widespread adoption of De Bruijn graph-based
+assemblers, k-mers became even more widely used.  However, the
+dramatically increased rate of sequence data generation from the Roche
+454 and the Solexa/Illumina sequencers has challenged the most basic
+data structures and algorithms for k-mer storage and manipulation.
+This has led to the development of a wide range of data structures and
+algorithms that explore possible improvements to k-mer-based
+approaches.
 
 Here we present version 1.0 of the khmer software package, a
 high-performance library implementing memory- and time-efficient
@@ -113,19 +113,39 @@ compressible De Bruijn graph representations built on top of Bloom
 filters @cite, and a streaming lossy compression approach for
 short-read data sets termed ``digital normalization.''
 
-khmer is both research software and practical software: it has been
-used in the development of novel data structures and algorithms,
-and it is also immediately useful for certain kinds of data analysis
-(discussed below).
+khmer is both research software and a software product for users: it
+has been used in the development of novel data structures and
+algorithms, and it is also immediately useful for certain kinds of
+data analysis (discussed below).  We are continuing to develop research
+extensions while maintaining stable existing functionality.
 
-The khmer software consists of a core library implemented in C++,
-a CPython library wrapper implemented in C, and a set of Python
+The khmer software consists of a core library implemented in C++, a
+CPython library wrapper implemented in C, and a set of Python
 ``driver'' scripts that make use of the library to perform various
-sequence analysis tasks.  The software is currently developed on GitHub
-under github.com/ged-lab/, and it is released under the BSD License.
+sequence analysis tasks.  The software is currently developed on
+GitHub under github.com/ged-lab/, and it is released under the BSD
+License.  There is greater than 80\% statement coverage under
+automated tests, measured on both C++ and Python code but primarily
+executed at the Python level.
 
 % Results and Discussion can be combined.
-\section*{Results}
+\section*{Software details}
+
+\subsection*{Software design}
+
+The design of the khmer package is centered on hashtables, which are
+the primary data structure used for both k-mer counting and k-mer
+graph storage.  The CountMin Sketch implementation, detailed in @cite,
+uses N hash tables with 8-bit counters; the De Bruijn graph implementation
+uses N hash tables with 1-bit counters.  Graph traversal and
+graph labeling functionality that support the partitioning algorithm
+in @cite are built on top of the hashtable class in a separate ``subset''
+class.
+
+\subsection*{Implementation}
+
+12.2k lines of C and C++; 6.6k lines of Python, as measured by David Wheeler's
+ sloccount (http://www.dwheeler.com/sloccount/).
 
 Design
 
@@ -140,6 +160,8 @@ Digital normalization
 Protocols
 
 Pipeline/filter
+
+API freeze
 
 \subsection*{Subsection 1}
 
