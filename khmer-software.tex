@@ -144,45 +144,77 @@ class.
 
 \subsection*{Implementation}
 
-12.2k lines of C and C++; 6.6k lines of Python, as measured by David Wheeler's
- sloccount (http://www.dwheeler.com/sloccount/).
+The core data structures and traversal code are implemented in C++, and
+then wrapped for Python in hand-written C code, for a total of
+12.2k lines of C/C++ code.  The command-line API and all of the tests
+are written in 6.6k lines of Python code.
 
-Design
+Documentation is written in reStructuredText, compiled with Sphinx, and
+hosted on ReadTheDocs.org.
 
-Implementation
+\section*{Features}
 
-K-mer counting
+khmer has several complementary feature sets, all centered on short-read
+manipulation and filtering.
 
-De Bruijn Graph representation and exploration
+\subsection*{k-mer counting and read trimming}
 
-Digital normalization
+Using a memory-efficient CountMin Sketch approach, khmer provides an
+interface for online counting of k-mers in streams of reads.  The
+basic functionality includes calculating the k-mer frequency spectra
+in sequence data sets and trimming reads at low-abundance k-mers.
+This functionality is explored in @cite.
 
-Protocols
+\subsection*{De Bruijn graph representation and exploration}
 
-Pipeline/filter
+We have also built a De Bruijn graph representation on top of a Bloom
+filter, and implemented this in khmer.  The primary use for this so far
+has been to enable memory efficient {\em graph partitioning}, in which
+reads contributing to disconnected subgraphs are subdivided into different
+files.  This can lead to approximately 20-fold decrease in the amount of
+memory needed for metagenome assembly @cite, and may also separate reads
+into species-specific bins @cite.
 
-API freeze
+\subsection*{Digital normalization}
 
-\subsection*{Subsection 1}
+We have implemented a streaming ``lossy compression'' algorithm in
+khmer.  This ``digital normalization'' algorithm eliminates redundant
+short reads while retaining sufficient information to generate a
+contig assembly @cite.  The algorithm takes advantage of the online
+k-mer counting functionaliy in khmer to estimate per-read coverage as
+reads are examined; reads can then be accepted as novel or rejected as
+redundant. This functions as a kind of error correction, because the
+net effect is to decrease not only the total number of reads considered
+for assembly, but also decreases the total number of errors considered
+by the assembler.
 
-\subsection*{Subsection 2}
+%Protocols
 
-\section*{Discussion}
+%Pipeline/filter
+
+%API freeze
+
+%\subsection*{Subsection 1}
+
+%\subsection*{Subsection 2}
+
+%\section*{Discussion}
 
 % You may title this section "Methods" or "Models". 
 % "Models" is not a valid title for PLoS ONE authors. However, PLoS ONE
 % authors may use "Analysis" 
-\section*{Materials and Methods}
+%\section*{Materials and Methods}
 
 % Do NOT remove this, even if you are not including acknowledgments
 \section*{Acknowledgments}
 
+Grants@@
 
 %\section*{References}
 % The bibtex filename
 \bibliography{template}
 
-\section*{Figure Legends}
+%\section*{Figure Legends}
 %\begin{figure}[!ht]
 %\begin{center}
 %%\includegraphics[width=4in]{figure_name.2.eps}
@@ -196,7 +228,7 @@ API freeze
 %\end{figure}
 
 
-\section*{Tables}
+%\section*{Tables}
 %\begin{table}[!ht]
 %\caption{
 %\bf{Table title}}
