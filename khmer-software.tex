@@ -108,10 +108,10 @@ Here we present version 1.0 of the khmer software package, a
 high-performance library implementing memory- and time-efficient
 algorithms for the manipulation of short-read data sets.  khmer
 contains reference implementations of several approaches, including a
-probabilistic k-mer counter based on the CountMin Sketch @cite, a
+probabilistic k-mer counter based on the CountMin Sketch \cite{Zhang2013}, a
 compressible De Bruijn graph representations built on top of Bloom
-filters @cite, and a streaming lossy compression approach for
-short-read data sets termed ``digital normalization.''
+filters \cite{Pell2012}, and a streaming lossy compression approach for
+short-read data sets termed ``digital normalization'' \cite{Brown2012}.
 
 khmer is both research software and a software product for users: it
 has been used in the development of novel data structures and
@@ -135,11 +135,11 @@ executed at the Python level.
 
 The design of the khmer package is centered on hashtables, which are
 the primary data structure used for both k-mer counting and k-mer
-graph storage.  The CountMin Sketch implementation, detailed in @cite,
+graph storage.  The CountMin Sketch implementation, detailed in \cite{Zhang2013},
 uses N hash tables with 8-bit counters; the De Bruijn graph implementation
 uses N hash tables with 1-bit counters.  Graph traversal and
 graph labeling functionality that support the partitioning algorithm
-in @cite are built on top of the hashtable class in a separate ``subset''
+in \cite{Pell2012} are built on top of the hashtable class in a separate ``subset''
 class.
 
 \subsection*{Implementation}
@@ -163,7 +163,7 @@ Using a memory-efficient CountMin Sketch approach, khmer provides an
 interface for online counting of k-mers in streams of reads.  The
 basic functionality includes calculating the k-mer frequency spectra
 in sequence data sets and trimming reads at low-abundance k-mers.
-This functionality is explored in @cite.
+This functionality is explored in \cite{Zhang2013}.
 
 \subsection*{De Bruijn graph representation and exploration}
 
@@ -172,15 +172,15 @@ filter, and implemented this in khmer.  The primary use for this so far
 has been to enable memory efficient {\em graph partitioning}, in which
 reads contributing to disconnected subgraphs are subdivided into different
 files.  This can lead to approximately 20-fold decrease in the amount of
-memory needed for metagenome assembly @cite, and may also separate reads
-into species-specific bins @cite.
+memory needed for metagenome assembly \cite{Pell2012}, and may also separate reads
+into species-specific bins \cite{Howe2012}.
 
 \subsection*{Digital normalization}
 
 We have implemented a streaming ``lossy compression'' algorithm in
 khmer.  This ``digital normalization'' algorithm eliminates redundant
 short reads while retaining sufficient information to generate a
-contig assembly @cite.  The algorithm takes advantage of the online
+contig assembly \cite{Brown2012}.  The algorithm takes advantage of the online
 k-mer counting functionaliy in khmer to estimate per-read coverage as
 reads are examined; reads can then be accepted as novel or rejected as
 redundant. This functions as a kind of error correction, because the
@@ -212,7 +212,7 @@ Grants@@
 
 %\section*{References}
 % The bibtex filename
-\bibliography{template}
+\bibliography{khmer-software}
 
 %\section*{Figure Legends}
 %\begin{figure}[!ht]
