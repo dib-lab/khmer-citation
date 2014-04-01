@@ -84,7 +84,7 @@ efficiently with fixed length DNA words, or k-mers.  khmer provides
 implementations of a probabilistic k-mer counting data structure,
 a compressible De Bruijn graph representation, De Bruijn graph
 partitioning, and digital normalization.  khmer is implemented in C++
-and Python, and is freely available under the BSD license.
+and Python, and is freely available under the BSD license at http://github.com/ged-lab/khmer/.
 
 % Please keep the Author Summary between 150 and 200 words
 % Use first person. PLoS ONE authors please skip this step. 
@@ -93,12 +93,13 @@ and Python, and is freely available under the BSD license.
 
 \section*{Introduction}
 
-DNA words of a fixed-length k, or ``k-mer'', is a common abstraction
-in DNA sequence analysis.  With the advent of second-generation
+DNA words of a fixed-length k, or ``k-mer'', are a common abstraction
+in DNA sequence analysis that enable alignment-free sequence analysis
+and comparison. With the advent of second-generation
 sequencing and the widespread adoption of De Bruijn graph-based
 assemblers, k-mers became even more widely used.  However, the
 dramatically increased rate of sequence data generation from the Roche
-454 and the Solexa/Illumina sequencers has challenged the most basic
+454 and the Solexa/Illumina sequencers has challenged the basic
 data structures and algorithms for k-mer storage and manipulation.
 This has led to the development of a wide range of data structures and
 algorithms that explore possible improvements to k-mer-based
@@ -106,10 +107,10 @@ approaches.
 
 Here we present version 1.0 of the khmer software package, a
 high-performance library implementing memory- and time-efficient
-algorithms for the manipulation of short-read data sets.  khmer
+algorithms for the manipulation and analysis of short-read data sets.  khmer
 contains reference implementations of several approaches, including a
 probabilistic k-mer counter based on the CountMin Sketch \cite{Zhang2013}, a
-compressible De Bruijn graph representations built on top of Bloom
+compressible De Bruijn graph representation built on top of Bloom
 filters \cite{Pell2012}, and a streaming lossy compression approach for
 short-read data sets termed ``digital normalization'' \cite{Brown2012}.
 
@@ -117,7 +118,7 @@ khmer is both research software and a software product for users: it
 has been used in the development of novel data structures and
 algorithms, and it is also immediately useful for certain kinds of
 data analysis (discussed below).  We are continuing to develop research
-extensions while maintaining stable existing functionality.
+extensions while maintaining existing functionality.
 
 The khmer software consists of a core library implemented in C++, a
 CPython library wrapper implemented in C, and a set of Python
@@ -168,12 +169,13 @@ This functionality is explored in \cite{Zhang2013}.
 \subsection*{De Bruijn graph representation and exploration}
 
 We have also built a De Bruijn graph representation on top of a Bloom
-filter, and implemented this in khmer.  The primary use for this so far
-has been to enable memory efficient {\em graph partitioning}, in which
-reads contributing to disconnected subgraphs are subdivided into different
-files.  This can lead to approximately 20-fold decrease in the amount of
-memory needed for metagenome assembly \cite{Pell2012}, and may also separate reads
-into species-specific bins \cite{Howe2012}.
+filter, and implemented this in khmer.  The primary use for this so
+far has been to enable memory efficient {\em graph partitioning}, in
+which reads contributing to disconnected subgraphs are subdivided into
+different files.  This can lead to an approximately 20-fold decrease
+in the amount of memory needed for metagenome assembly
+\cite{Pell2012}, and may also separate reads into species-specific
+bins \cite{Howe2012}.
 
 \subsection*{Digital normalization}
 
@@ -208,7 +210,10 @@ by the assembler.
 % Do NOT remove this, even if you are not including acknowledgments
 \section*{Acknowledgments}
 
-Grants@@
+khmer development has largely been supported by AFRI Competitive Grant
+no. 2010-65205-20361 from the USDA NIFA, and is now funded by the
+National Human Genome Research Institute of the National Institutes of
+Health under Award Number R01HG007513, both to CTB.
 
 %\section*{References}
 % The bibtex filename
