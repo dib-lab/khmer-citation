@@ -9,15 +9,15 @@
 %
 % For more detailed article preparation guidelines, please see:
 % http://f1000research.com/author-guidelines and http://f1000research.com/data-preparation
-
 \documentclass[10pt,a4paper,twocolumn]{article}
 \usepackage{f1000_styles}
+\usepackage{hyperref}
 
 \begin{document}
 
 \title{The khmer software package: enabling efficient nucleotide sequence analysis}
 \author[1]{Michael R. Crusoe}
-\author[2]{Hussien Alameldin}
+\author[2]{Hussien F. Alameldin}
 \author[3]{Sherine Awad}
 \author[4]{Elmar Bucher}
 \author[5]{Adam Caldwell}
@@ -31,124 +31,119 @@
 \author[13]{Leonor Garcia-Gutierrez}
 \author[14]{Phillip Garland}
 \author[15]{Jonathan Gluck}
-\author[16]{Ivan Gonzalez}
+\author[16]{Iván González}
 \author[17]{Sarah Guermond}
 \author[18]{Jiarong Guo}
 \author[19]{Aditi Gupta}
-\author[20]{Josh Herr}
+\author[20]{Joshua R. Herr}
 \author[21]{Adina Howe}
 \author[22]{Alex Hyer}
 \author[23]{Andreas Härpfer}
 \author[24]{Luiz Irber}
 \author[25]{Rhys Kidd}
-\author[26]{Heather L. Wiencko}
-\author[27]{David Lin}
-\author[28]{Justin Lippi}
-\author[29]{Tamer Mansour}
-\author[30]{Pamela McA\'Nulty}
-\author[31]{Eric McDonald}
-\author[32]{Jessica Mizzi}
-\author[33]{Kevin Murray}
-\author[34]{Joshua Nahum}
-\author[35]{Kaben Nanlohy}
-\author[36]{Lex Nederbragt}
-\author[37]{Humberto Ortiz-Zuazaga}
-\author[38]{Jeramia Ory}
-\author[39]{Jason Pell}
-\author[40]{Chuck Pepe-Ranney}
-\author[41]{Rodney Picett}
-\author[42]{Ryan R. Boyce}
-\author[43]{Erich Schwarz}
-\author[44]{Camille Scott}
-\author[45]{Josiah Seaman}
-\author[46]{Scott Sievert}
-\author[47]{Jared Simpson}
-\author[48]{Connor T. Skennerton}
-\author[49]{James Spencer}
-\author[50]{Ramakrishnan Rajaram Srinivasan}
-\author[51]{Daniel Standage}
-\author[52]{James Stapleton}
-\author[53]{Susan Steinman}
-\author[54]{Joe Stein}
-\author[55]{Benjamin Taylor}
-\author[56]{Will Trimble}
-\author[57]{Michael Wright}
-\author[58]{Brian Wyss}
-\author[59]{Qingpeng Zhang}
-\author[60]{en zyme}
-\author[61]{C. Titus Brown}
-\affil[1]{mcrusoe@msu.edu, \\ Microbiology and Molecular Genetics, \\ Michigan State University, \\ East Lansing, MI 48824}
-\affil[2]{hussien@msu.edu}
-\affil[3]{sherine.awad@gmail.com, \\ Microbiology and Molecular Genetics, \\ Michigan State University, \\ East Lansing, MI 48824; \\Population Health and Reproduction, \\University of California, Davis, \\ Davis, CA 95616, USA}
-\affil[4]{buchere@ohsu.edu}
-\affil[5]{adam.caldwell@gmail.com}
-\affil[6]{cartwright@asu.edu}
-\affil[7]{greg@edvenson.com, \\Pico Computing, Inc., \\Seattle, WA 98104}
-\affil[8]{bedeabc@gmail.com}
-\affil[9]{scott.fay@invitae.com}
-\affil[10]{bocajnotnef@gmail.com}
-\affil[11]{thomas.fenzl@gmx.net}
-\affil[12]{jrdn.fish@gmail.com}
-\affil[13]{l.garcia-gutierrez@warwick.ac.uk}
+\author[26]{David Lin}
+\author[27]{Justin Lippi}
+\author[28]{Tamer Mansour}
+\author[29]{Pamela McA\'Nulty}
+\author[30]{Eric McDonald}
+\author[31]{Jessica Mizzi}
+\author[32]{Kevin D. Murray}
+\author[33]{Joshua Nahum}
+\author[34]{Kaben Nanlohy}
+\author[35]{Alexander Johan Nederbragt}
+\author[36]{Humberto Ortiz-Zuazaga}
+\author[37]{Jeramia Ory}
+\author[38]{Jason Pell}
+\author[39]{Charles Pepe-Ranney}
+\author[40]{Zachary N. Russ}
+\author[41]{Erich Schwarz}
+\author[42]{Camille Scott}
+\author[43]{Josiah Seaman}
+\author[44]{Scott Sievert}
+\author[45]{Jared Simpson}
+\author[46]{Connor T. Skennerton}
+\author[47]{James Spencer}
+\author[48]{Ramakrishnan Srinivasan}
+\author[49]{Daniel Standage}
+\author[50]{James A. Stapleton}
+\author[51]{Susan R. Steinman}
+\author[52]{Joe Stein}
+\author[53]{Benjamin Taylor}
+\author[54]{Will Trimble}
+\author[55]{Heather L. Wiencko}
+\author[56]{Michael Wright}
+\author[57]{Brian Wyss}
+\author[58]{Qingpeng Zhang}
+\author[59]{en zyme}
+\author[60]{C. Titus Brown}
+\affil[1]{mcrusoe@msu.edu\\Microbiology and Molecular Genetics\\ Michigan State University\\East Lansing, MI 48824, USA}
+\affil[2]{hussien@msu.edu\\Department of Plant, Soil and Microbial Sciences\\Michigan State University\\East Lansing\\MI 48824\\USA}
+\affil[3]{drmahmoud@ucdavis.edu\\Population Health and Reproduction\\University of California, Davis\\Davis\\CA 95616, USA}
+\affil[4]{buchere@ohsu.edu\\Oregon Health and Science University\\Department of Biomedical Engineering\\2730 SW Moody Ave CL3G\\Portland\\OR 97201\\USA}
+\affil[5]{adam.caldwell@gmail.com\\Biology Department\\San Jose State University\\San Jose, CA 95192\\USA}
+\affil[6]{cartwright@asu.edu\\School of Life Sciences and The Biodesign Institute\\Arizona State University\\Tempe\\AZ 85287-5301\\USA}
+\affil[7]{greg@edvenson.com\\Micron Technology\\Seattle\\WA 98109\\USA}
+\affil[8]{bede.constantinides@manchester.ac.uk\\Computational and Evolutionary Biology\\Faculty of Life Sciences\\University of Manchester\\Manchester\\M13 9PT\\UK}
+\affil[9]{scott.a.fay@gmail.com\\Invitae\\San Francisco\\CA 94107\\USA}
+\affil[10]{bocajnotnef@gmail.com\\Computer Science and Engineering\\Michigan State University\\East Lansing, MI 48824, USA}
+\affil[11]{thomas.fenzl@gmail.com}
+\affil[12]{jrdn.fish@gmail.com\\Computer Science and Engineering\\Michigan State University\\East Lansing\\MI 48824, USA}
+\affil[13]{l.garcia-gutierrez@warwick.ac.uk\\Mathematics Institute\\University of Warwick\\CV4 7AL\\Coventry\\UK}
 \affil[14]{pgarland@gmail.com}
-\affil[15]{jonathangluck08854@gmail.com}
-\affil[16]{iglpdc@gmail.com}
-\affil[17]{sarah.guermond@gmail.com}
-\affil[18]{guojiaro@gmail.com}
-\affil[19]{aditi9783@gmail.com}
-\affil[20]{joshua.r.herr@gmail.com}
-\affil[21]{howead@msu.edu, \\Microbiology and Molecular Genetics, \\Michigan State University, \\East Lansing, MI 48824}
-\affil[22]{theonehyer@gmail.com}
-\affil[23]{ahaerpfer@gmail.com}
-\affil[24]{luiz.irber@gmail.com, \\Computer Science and Engineering, \\Michigan State University, \\East Lansing, MI 48824, USA}
-\affil[25]{rhyskidd@gmail.com}
-\affil[26]{wienckhl@tcd.ie}
-\affil[27]{dave@verdematics.com}
-\affil[28]{jlippi@gmail.com}
-\affil[29]{drtamermansour@gmail.com}
-\affil[30]{pamela@addgene.org}
-\affil[31]{em@msu.edu}
-\affil[32]{mizzijes@msu.edu}
-\affil[33]{spam@kdmurray.id.au}
-\affil[34]{joshnahum@gmail.com}
-\affil[35]{kaben.nanlohy@gmail.com}
-\affil[36]{lex.nederbragt@ibv.uio.no}
-\affil[37]{humberto.ortiz@upr.edu}
-\affil[38]{jeramia.ory@gmail.com}
-\affil[39]{jason.pell@gmail.com, \\Computer Science and Engineering, \\Michigan State University, \\East Lansing, MI 48824, USA}
-\affil[40]{chuck.peperanney@gmail.com}
-\affil[41]{pickett.rodney@gmail.com}
-\affil[42]{boycerya@msu.edu}
-\affil[43]{ems394@cornell.edu}
-\affil[44]{camille.scott.w@gmail.com, \\Computer Science and Engineering, \\Michigan State University, \\East Lansing, MI 48824, USA}
-\affil[45]{josiah@dnaskittle.com}
-\affil[46]{sieve121@umn.edu}
-\affil[47]{js18@sanger.ac.uk}
-\affil[48]{c.skennerton@gmail.com}
-\affil[49]{james.s.spencer@gmail.com}
-\affil[50]{ramrs@nyu.edu}
-\affil[51]{daniel.standage@gmail.com}
-\affil[52]{jas@msu.edu}
-\affil[53]{steinman.tutoring@gmail.com}
-\affil[54]{joeaarons@gmail.com}
-\affil[55]{taylo886@msu.edu}
-\affil[56]{trimble@anl.gov}
-\affil[57]{wrigh517@gmail.com}
-\affil[58]{wyssbria@msu.edu}
-\affil[59]{qingpeng@msu.edu, \\Computer Science and Engineering, \\Michigan State University, \\East Lansing, MI 48824, USA}
-\affil[60]{en_zyme@outlook.com}
-\affil[61]{zachary.n.russ@gmail.com}
-\affil[62]{titus@idyll.org, corresponding author\\Computer Science and Engineering & Microbiology and Molecular Genetics, \\Michigan State University, \\ East Lansing, MI 48824, USA; \\Population Health and Reproduction, \\University of California, Davis, \\Davis, CA 95616, USA}
+\affil[15]{jonathangluck08854@gmail.com\\Graduate Program\\University of Maryland\\College Park\\MD, 20742\\USA}
+\affil[16]{igonzalez@mailaps.org\\Athinoula A. Martinos Center for Biomedical Imaging\\Department of Radiology\\Massachusetts General Hospital\\Charlestown\\MA 02129\\USA}
+\affil[17]{sarah.guermond@gmail.com} % No affiliation
+\affil[18]{guojiaro@gmail.com\\Center for Microbial Ecology\\Michigan State University\\East Lansing\\MI 48824\\USA}
+\affil[19]{agupta@msu.edu\\Microbiology and Molecular Genetics\\Michigan State University\\East Lansing\\MI 48824\\USA}
+\affil[20]{joshua.r.herr@gmail.com\\Microbiology and Molecular Genetics\\Michigan State University\\East Lansing\\MI 48824\\USA}
+\affil[21]{adina@iastate.edu\\Department of Agricultural and Biosystems Engineering\\Iowa State University\\Ames\\IA 50014\\USA}
+\affil[22]{theonehyer@gmail.com\\Department of Biology\\University of Utah\\Salt Lake City\\UT, 84112\\USA}
+\affil[23]{ahaerpfer@gmail.com\\ConSol* Software GmbH\\81669 München\\Germany}
+\affil[24]{luiz.irber@gmail.com\\Computer Science and Engineering\\Michigan State University\\East Lansing\\MI 48824, USA}
+\affil[25]{rhyskidd@gmail.com} %% unaffiliated
+\affil[26]{dave@verdematics.com\\Verdematics\\Fremont\\CA\\94539\\USA}
+\affil[27]{jlippi@gmail.com} %% no affiliation
+\affil[28]{drtamermansour@gmail.com\\Clinical Pathology\\Mansoura University\\Mansoura\\Egypt.\\
+Population Health and Reproduction\\University of California, Davis\\Davis\\CA 95616\\USA}
+\affil[29]{pamela@addgene.org\\Addgene\\Cambridge\\MA, 02139\\USA}
+\affil[30]{em@msu.edu\\Computer Science and Engineering\\Michigan State University\\East Lansing, MI 48824, USA}
+\affil[31]{mizzijes@msu.edu\\Biochemistry and Molecular Biology\\Michigan State University\\East Lansing\\MI 48824\\USA}
+\affil[32]{kevin.murray@anu.edu.au\\ARC Centre of Excellence in Plant Energy Biology\\The Australian National University\\ Canberra\\ACT\\Australia}
+\affil[33]{joshnahum@gmail.com\\BEACON Center\\Michigan State University\\East Lansing\\MI 48824\\USA}
+\affil[34]{kaben.nanlohy@gmail.com} %% no affiliation
+\affil[35]{lex.nederbragt@ibv.uio.no\\Centre for Ecological and Evolutionary Synthesis\\Dept. of Biosciences\\University of Oslo\\0316 Oslo\\Norway}
+\affil[36]{humberto.ortiz@upr.edu\\Department of Computer Science\\Rio Piedras Campus\\University of Puerto Rico\\San Juan\\ PR 00936\\USA}
+\affil[37]{Jeramia.Ory@stlcop.edu\\Biochemistry\\St. Louis College of Pharmacy\\St. Louis\\MO 63110\\USA}
+\affil[38]{jason.pell@gmail.com\\Computer Science and Engineering\\Michigan State University\\East Lansing, MI 48824, USA}
+\affil[39]{chuck.peperanney@gmail.com\\Crop and Soil Sciences\\Cornell University\\Ithaca\\NY 14850\\USA}
+\affil[40]{zachary.n.russ@gmail.com\\Department of Bioengineering\\UC Berkeley\\Berkeley\\CA 94709\\USA}
+\affil[41]{ems394@cornell.edu\\Department of Molecular Biology and Genetics\\Cornell University\\Ithaca\\NY 14853-2703\\USA}
+\affil[42]{camille.scott.w@gmail.com\\Computer Science and Engineering\\Michigan State University\\East Lansing, MI 48824, USA}
+\affil[43]{josiah@dnaskittle.com\\Data Visualization\\Newline Technical Innovations\\Windsor\\CO 80550\\USA}
+\affil[44]{sieve121@umn.edu\\Electrical and Computer Engineering\\University of Minnesota\\Minneapolis\\MN 55455\\USA}
+\affil[45]{js18@sanger.ac.uk\\Ontario Institute for Cancer Research\\Toronto\\Ontario, M5G 0A3\\Canada.\\Computer Science\\University of Toronto\\Toronto\\Ontario, M5S 3G4\\Canada}
+\affil[46]{c.skennerton@gmail.com\\Division of Geological and Planetary Sciences\\California Institute of Technology\\Pasadena\\CA 91125\\USA}
+\affil[47]{j.spencer@imperial.ac.uk\\Dept of Physics and Dept of Materials\\Imperial College London\\London SW7 2AZ\\UK}
+\affil[48]{ramrs@nyu.edu\\Genetics and Genomic Sciences\\Icahn School of Medicine at Mount Sinai\\New York\\NY 10029\\USA}
+\affil[49]{daniel.standage@gmail.com\\Department of Biology\\Indiana University\\Bloomington\\IN 47405\\USA;\\Bioinformatics and Computational Biology Graduate Program\\Iowa State University\\Ames\\IA 50011\\USA}
+\affil[50]{jas@msu.edu\\Chemical Engineering \& Materials Science\\Michigan State University\\East Lansing\\MI 48824\\USA}
+\affil[51]{susan.steinman@gmail.com\\The New York Eye and Ear Infirmary of Mount Sinai\\New York\\NY 10010\\USA}
+\affil[52]{joeaarons@gmail.com}
+\affil[53]{taylo886@msu.edu\\Computer Science and Engineering\\Michigan State University\\East Lansing, MI 48824, USA}
+\affil[54]{trimble@anl.gov}
+\affil[55]{heather.wiencko@equinome.com\\Department of Genetics\\Smurfit Institute\\Trinity College Dublin\\Dublin 2\\Ireland}
+\affil[56]{wrigh517@gmail.com\\Computer Science and Engineering\\Michigan State University\\East Lansing, MI 48824, USA}
+\affil[57]{wyssbria@msu.edu\\Computer Science and Engineering\\Michigan State University\\East Lansing, MI 48824, USA}
+\affil[58]{qingpeng@gmail.com\\Computer Science and Engineering\\Michigan State University\\East Lansing, MI 48824, USA}
+\affil[59]{en\_zyme@outlook.com}
+\affil[60]{titus@idyll.org, corresponding author\\Computer Science and Engineering \& Microbiology and Molecular Genetics\\Michigan State University\\East Lansing, MI 48824, USA\\Population Health and Reproduction\\University of California, Davis\\Davis, CA 95616, USA}
 
 \maketitle
 \thispagestyle{fancy}
-
-Please list all authors that played a significant role in developing the software tool and/or writing the article. Please provide full affiliation information (including full institutional address, ZIP code and e-mail address) for all authors, and identify who is/are the corresponding author(s).
-
 \begin{abstract}
 
 The khmer package is a freely available software library for working efficiently with fixed length DNA words, or k-mers.  khmer provides implementations of a probabilistic k-mer counting data structure, a compressible De Bruijn graph representation, De Bruijn graph
-partitioning, and digital normalization.  khmer is implemented in C++ and Python, and is freely available under the BSD license at http://github.com/dib-lab/khmer/.
+partitioning, and digital normalization.  khmer is implemented in C++ and Python, and is freely available under the BSD license at \url{https://github.com/dib-lab/khmer/}.
 
 \end{abstract}
 \listoftodos[F1000Research review comments] % Ignore until review stage
@@ -156,7 +151,7 @@ partitioning, and digital normalization.  khmer is implemented in C++ and Python
 
 \section*{Introduction}
 
-The introduction provides context as to why the software tool was developed and what need it addresses.  It is good scholarly practice to mention previously developed tools that address similar needs, and why the current tool is needed. 
+%%The introduction provides context as to why the software tool was developed and what need it addresses.  It is good scholarly practice to mention previously developed tools that address similar needs, and why the current tool is needed. 
 
 DNA words of a fixed-length k, or ``k-mer'', are a common abstraction
 in DNA sequence analysis that enable alignment-free sequence analysis
@@ -169,6 +164,7 @@ data structures and algorithms for k-mer storage and manipulation.
 This has led to the development of a wide range of data structures and
 algorithms that explore possible improvements to k-mer-based
 approaches.
+% @CTB this needs more citations ^^^^
 
 Here we present version 1.4 of the khmer software package, a
 high-performance library implementing memory- and time-efficient
@@ -176,29 +172,31 @@ algorithms for the manipulation and analysis of short-read data sets.  khmer
 contains reference implementations of several approaches, including a
 probabilistic k-mer counter based on the CountMin Sketch \cite{Zhang2013}, a
 compressible De Bruijn graph representation built on top of Bloom
-filters \cite{Pell2012}, and a streaming lossy compression approach for
-short-read data sets termed ``digital normalization'' \cite{Brown2012}.
+filters \cite{Pell2012}, a streaming lossy compression approach for
+short-read data sets termed ``digital normalization'' \cite{Brown2012},
+and a generalized semi-streaming approach for k-mer spectral analysis of
+variable-coverage shotgun sequencing data sets \cite{zhang2015crossing}.
 
 khmer is both research software and a software product for users: it
 has been used in the development of novel data structures and
 algorithms, and it is also immediately useful for certain kinds of
-data analysis (discussed below).  We are continuing to develop research
+data analysis (discussed below).  We continue to develop research
 extensions while maintaining existing functionality.
 
 The khmer software consists of a core library implemented in C++, a
 CPython library wrapper implemented in C, and a set of Python
 ``driver'' scripts that make use of the library to perform various
 sequence analysis tasks.  The software is currently developed on
-GitHub under github.com/dib-lab/, and it is released under the BSD
+GitHub under \url{https://github.com/dib-lab/}, and it is released under the BSD
 License.  There is greater than 80\% statement coverage under
 automated tests, measured on both C++ and Python code but primarily
 executed at the Python level.
 
 \section*{Methods}
 \subsection*{Implementation}
-For software tool papers, this section should address how the tool works and any relevant technical details required for implementation of the tool by other developers.  
+%For software tool papers, this section should address how the tool works and any relevant technical details required for implementation of the tool by other developers.  
 
-The core data structures and traversal code are implemented in C++, and
+The core data k-mer counting data structures and graph traversal code are implemented in C++, and
 then wrapped for Python in hand-written C code, for a total of
 12.2k lines of C/C++ code.  The command-line API and all of the tests
 are written in 6.6k lines of Python code.
@@ -206,20 +204,31 @@ are written in 6.6k lines of Python code.
 Documentation is written in reStructuredText, compiled with Sphinx, and hosted on ReadTheDocs.org.
 
 \subsection*{Operation}
-This part of the methods should include the minimal system requirements needed to run the software and an overview of the workflow for the tool for users of the tool.
+%This part of the methods should include the minimal system requirements needed to run the software and an overview of the workflow for the tool for users of the tool.
+
+khmer is primarily developed on Linux for Python 2.7 and 64-bit processors, and several core developers use Mac OS X.  The project is tested regularly using the Jenkins continuous integration system running on Ubuntu 14.04 LTS and Mac OS X 10.10; the current development branch is also tested under Python 3.4  Releases are tested against many Linux releases, including RedHat Enterprise Linux, Debian, Fedora, and Ubuntu.  khmer should work on most UNIX derivatives with little effort.  Windows is explicitly not supported.
+
+Memory requirements for using khmer vary with the complexity of data and are user configurable.  Several core data structures can trade memory for false positives, and we have explored these details in several papers, most notably Pell et al. 2012 and Zhang et al. 2014.  For example, most single organism mRNAseq data sets can be processed in under 16 GB of RAM (Brown et al., 2012; Lowe et al., 2014), while memory requirements for metagenome data sets may vary from dozens of gigabytes to terabytes of RAM.
+
+The user interface for khmer is via the command line.  Approximately 25 Python scripts provide an  interface to khmer functionality; they are documented at \url{http://khmer.readthedocs.org/} under User Documentation.  Changes to the interface are managed with semantic versioning (cite) which guarantees command line compatibility between releases with the same major version.
+
+khmer also has an unstable developer interface via its Python and C++ libraries, on which the command line scripts are built.
 
 \section*{Features}
 
 khmer has several complementary feature sets, all centered on short-read
-manipulation and filtering.
+manipulation and filtering.  The most common use of khmer is for preprocessing
+short read Illumina data sets prior to {\em de novo} sequence assembly, with the
+goals of decreasing compute requirements for the assembly as well as potentially
+improving the assembly results.
 
 \subsection*{k-mer counting and read trimming}
 
-Using a memory-efficient CountMin Sketch approach, khmer provides an
+Using a memory-efficient CountMin Sketch data structure, khmer provides an
 interface for online counting of k-mers in streams of reads.  The
-basic functionality includes calculating the k-mer frequency spectra
+basic functionality includes calculating the k-mer frequency spectrum
 in sequence data sets and trimming reads at low-abundance k-mers.
-This functionality is explored in \cite{Zhang2013}.
+This functionality is explored and benchmarked in \cite{Zhang2013}.
 
 \subsection*{De Bruijn graph representation and exploration}
 
@@ -230,51 +239,83 @@ which reads contributing to disconnected subgraphs are subdivided into
 different files.  This can lead to an approximately 20-fold decrease
 in the amount of memory needed for metagenome assembly
 \cite{Pell2012}, and may also separate reads into species-specific
-bins \cite{Howe2012}.
+bins \cite{Howe2014}.
 
 \subsection*{Digital normalization}
 
-We have implemented a streaming ``lossy compression'' algorithm in
-khmer.  This ``digital normalization'' algorithm eliminates redundant
+We also provide an implementation of a novel streaming ``lossy compression'' algorithm in
+khmer that performs abundance normalization of shotgun sequence data.
+This ``digital normalization'' algorithm eliminates redundant
 short reads while retaining sufficient information to generate a
 contig assembly \cite{Brown2012}.  The algorithm takes advantage of the online
-k-mer counting functionaliy in khmer to estimate per-read coverage as
+k-mer counting functionality in khmer to estimate per-read coverage as
 reads are examined; reads can then be accepted as novel or rejected as
 redundant. This functions as a kind of error correction, because the
 net effect is to decrease not only the total number of reads considered
-for assembly, but also decreases the total number of errors considered
-by the assembler.
+for assembly, but also the total number of errors considered
+by the assembler.  This results in a decrease of the
+amount of memory needed for {\em de novo} assembly of high-coverage data sets.
+% @CTB do we want to put in downstream citations here, e.g. Trinity?
+% @CTB do we want to put in references to evidence that this works, e.g. Lowe?
 
+\subsection*{Semi-streaming k-mer spectral analysis}
 
-\section*{Results} % Optional - only if novel data or analyses are included
-This section is only required if the paper includes novel data or analyses, and should be written as a traditional results section.
+We recently extended the digital normalization approach to provide a generalized semi-streaming approach for k-mer spectral analysis \cite{zhang2015crossing}. Here, we examine read coverage on a per-locus basis in the De Bruijn graph and, once a particular locus has sufficient coverage, call errors or trim bases for all following reads from that graph locus.  The approach is "semi-streaming" \cite{semi-streaming} because some reads must be examined twice.  This semi-streaming approach enables few-pass analysis of high coverage data sets, and also generalizes k-mer spectral analysis to data sets with uneven coverage such as metagenomes and transcriptomes.
+
+%\section*{Results} % Optional - only if novel data or analyses are included
+%This section is only required if the paper includes novel data or analyses, and should be written as a traditional results section.
 
 \section*{Use Cases} % Optional - only if NO new datasets are included
-This section is required if the paper does not include novel data or analyses. 
-Examples of input and output files should be provided with some explanatory context.  Any novel or complex variable parameters should also be explained in sufficient detail to allow users to understand and use the tool's functionality.
+%This section is required if the paper does not include novel data or analyses. 
+%Examples of input and output files should be provided with some explanatory context.  Any novel or complex variable parameters should also be explained in sufficient detail to allow users to understand and use the tool's functionality.
 
-\section*{Discussion} % Optional - only if novel data or analyses are included
-This section is only required if the paper includes novel data or analyses, and should be written in the same style as a traditional discussion section.
-Please include a brief discussion of allowances made (if any) for controlling bias or unwanted sources of variability, and the limitations of any novel datasets.
+\subsection*{Prefiltering sequence data for de novo assembly with digital normalization}
+
+The most frequent use of khmer in the literature is for digital normalization as implemented in
+the script {\tt normalize-by-median.py}.   This script takes as input a list of FASTA or FASTQ
+files, which it then filter by abundance as described above; see \cite{diginorm} for details.  The output of the digital normalization script is a downsampled set of reads, with no modifications to the reads themselves.  The three key parameters for the script are the k-mer size, the desired coverage level, and the amount of memory to be used for k-mer counting.  The interaction between these three parameters and the filtering process is complex and depends on the data set being processed, but generally higher coverage levels and longer k-mer sizes result in less data being removed.  Lower memory allocation increases the rate at which reads are removed erroneously, but this process is very robust in practice \cite{zhang2014}.   
 
 
-\section*{Conclusions} % Optional - only if novel data or analyses are included
-This section is only required if the paper includes novel data or analyses, and should be written as a traditional conclusion.
+Data output by the script can then be assembled using any normal {\em de novo} assembler such as Velvet, IDBA, or SPAdes (@cite).
+
+The practical effect of digital normalization is twofold. First, on high coverage data sets, the majority of reads (and therefore the majority of errors in the data set) are eliminated.  This can
+dramatically speed up the de novo assembly process, which is often a heavyweight multipass
+computational approach.  Second, on variable coverage data such as metagenomes, transcriptomes, and single cell data, variation in the data set's coverage is removed.  This can improve the output of assemblers that rely on assumptions of uniform coverage.
+
+@@Examples
+
+\subsection*{Removing low abundance k-mers from sequence data}
+
+\subsection*{Partitioning reads into disconnected assembly graphs}
+
+\subsection*{Reformatting collections of short reads}
+
+think: interleave, split, extract; sample reads randomly
+
+%\section*{Discussion} % Optional - only if novel data or analyses are included
+%This section is only required if the paper includes novel data or analyses, and should be written in the same style as a traditional discussion section.
+%Please include a brief discussion of allowances made (if any) for controlling bias or unwanted sources of variability, and the limitations of any novel datasets.
+
+
+%\section*{Conclusions} % Optional - only if novel data or analyses are included
+%This section is only required if the paper includes novel data or analyses, and should be written as %a traditional conclusion.
 
 \section*{Summary} % Optional - only if NO new datasets are included
-This section is required if the paper does not include novel data or analyses.  It allows authors to briefly summarize the key points from the article.
 
-\section*{Data availability} % Optional - only if novel data or analyses are included
-Please add details of where any datasets that are mentioned in the paper, and that have not have not previously been formally published, can be found.  If previously published datasets are mentioned, these should be cited in the references, as per usual scholarly conventions.
+
+%This section is required if the paper does not include novel data or analyses.  It allows authors to %briefly summarize the key points from the article.
+
+
 
 \section*{Software availability}
+%% mention 
 This section will be generated by the Editorial Office before publication. Authors are asked to provide some initial information to assist the Editorial Office, as detailed below.
 \begin{enumerate}
 \item URL link to where the software can be downloaded from or used by a non-coder (AUTHOR TO PROVIDE; optional)
-khmer.readthedocs.org/en/v1.4/
+\url{https://khmer.readthedocs.org/en/v1.4/}
 \item URL link to the author's version control system repository containing the source code
 (AUTHOR TO PROVIDE; required)
-https://github.com/dib-lab/khmer/tree/v1.4
+\url{https://github.com/dib-lab/khmer/tree/v1.4}
 \item Link to source code as at time of publication ({\textit{F1000Research}} TO GENERATE)
 \item Link to archived source code as at time of publication ({\textit{F1000Research}} TO GENERATE)
 \item Software license (AUTHOR TO PROVIDE; required)
@@ -291,53 +332,38 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
 
 
 \section*{Author contributions}
-CTB is the primary investigator for the khmer software package. MRC is the lead software developer from July 2013 onwards. Many significant components of khmer have their own paper describing them CITE CITE CITE. The remaining authors each have one or more Git commits in their name.
+CTB is the primary investigator for the khmer software package. MRC is the lead software developer from July 2013 onwards. Many significant components of khmer have their own paper describing them (see "Features", above). The remaining authors each have one or more Git commits in their name.
 
 \section*{Competing interests}
-All financial, personal, or professional competing interests for any of the authors that
-could be construed to unduly influence the content of the article must be disclosed and will be displayed alongside the article. If there are no relevant competing interests to declare, please add the following: 'No competing interests were disclosed'.
+%All financial, personal, or professional competing interests for any of the authors that
+%could be construed to unduly influence the content of the article must be disclosed and will be displayed alongside the article. If there are no relevant competing interests to declare, please add the following:
+No competing interests were disclosed
 
 \section*{Grant information}
-Please state who funded the work discussed in this article, whether it is your employer, a grant funder etc. Please do not list funding that you have that is not relevant to this
-specific piece of research. For each funder, please state the funder’s name, the grant
-number where applicable, and the individual to whom the grant was assigned.
-If your work was not funded by any grants, please include the line: ‘The author(s)
-declared that no grants were involved in supporting this work.’
+%Please state who funded the work discussed in this article, whether it is your employer, a grant funder etc. Please do not list funding that you have that is not relevant to this
+%specific piece of research. For each funder, please state the funder’s name, the grant
+%number where applicable, and the individual to whom the grant was assigned.
+%If your work was not funded by any grants, please include the line: ‘The author(s)
+%declared that no grants were involved in supporting this work.’
 
 khmer development has largely been supported by AFRI Competitive Grant
 no. 2010-65205-20361 from the USDA NIFA, and is now funded by the
 National Human Genome Research Institute of the National Institutes of
-Health under Award Number R01HG007513, both to CTB.
+Health under Award Number R01HG007513, as well as by the the Gordon and Betty Moore Foundation under Award number GBMF4551, all to CTB.
 
-\section*{Acknowledgments}
-This section should acknowledge anyone who contributed to the research or the
-article but who does not qualify as an author based on the criteria provided earlier
-(e.g. someone or an organization that provided writing assistance). Please state how
-they contributed; authors should obtain permission to acknowledge from all those
-mentioned in the Acknowledgments section.
+%\section*{Acknowledgments}
+%This section should acknowledge anyone who contributed to the research or the
+%article but who does not qualify as an author based on the criteria provided earlier
+%(e.g. someone or an organization that provided writing assistance). Please state how
+%they contributed; authors should obtain permission to acknowledge from all those
+%mentioned in the Acknowledgments section.%
 
-Please do not list grant funding in this section.
+%Please do not list grant funding in this section.
 
 
-\nocite{*}
+%\nocite{*}
 {\small\bibliographystyle{unsrt}
-\bibliography{sample}}
-
-
-References can be listed in any standard referencing style and should be consistent between references within a given article.
-
-Reference management systems such as Zotero provide options for exporting bibliographies as BibTeX files. BibTex is a bibliographic tool that is used with LaTeX to help organize the user's references and create a bibliography. This template contains an example of such a file, sample.bib, which can be replaced with your own. 
-
-
-\section*{USING LATEX}
-Some examples of commonly used \LaTeX{}  commands and features are listed below, to help you get started.
-
-
-\subsection*{Sections}
-
-Use section and subsection commands to organize your document. \LaTeX{} handles all the formatting and numbering automatically. Use ref and label commands for cross-references.
-
-
+\bibliography{main}}
 
 
 % See this guide for more information on BibTeX:

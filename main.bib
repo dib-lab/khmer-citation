@@ -165,11 +165,42 @@ CONTACT: pashadag@cse.psu.edu.},
 	Year = {2012}}
 
 @article{Zhang2013,
-	Author = {Qingpeng Zhang and Jason Pell and Rosangela Canino-Koning and Adina Chuang Howe and C. Titus Brown},
-	Journal = {arXiv preprint},
-	Month = {09},
-	Title = {These are not the k-mers you are looking for: efficient online k-mer counting using a probabilistic data structure},
-	Year = {2013}}
+      author = "Zhang, Qingpeng AND Pell, Jason AND Canino-Koning, Rosangela
+  AND Howe, Adina Chuang AND Brown, C. Titus",
+      journal = "PLoS ONE",
+      publisher = "Public Library of Science",
+      title = "These Are Not the K-mers You Are Looking For: Efficient Online
+  K-mer Counting Using a Probabilistic Data Structure",
+      year = "2014",
+      month = "07",
+      volume = "9",
+      url = "http://dx.doi.org/10.1371%2Fjournal.pone.0101271",
+      pages = "e101271",
+      abstract = "<p>K-mer abundance analysis is widely used for many purposes in
+  nucleotide sequence analysis, including data preprocessing for de novo
+  assembly, repeat detection, and sequencing coverage estimation. We present the
+  khmer software package for fast and memory efficient <italic>online</italic>
+  counting of k-mers in sequencing data sets. Unlike previous methods based on
+  data structures such as hash tables, suffix arrays, and trie structures, khmer
+  relies entirely on a simple probabilistic data structure, a Count-Min Sketch.
+  The Count-Min Sketch permits online updating and retrieval of k-mer counts in
+  memory which is necessary to support online k-mer analysis algorithms. On
+  sparse data sets this data structure is considerably more memory efficient than
+  any exact data structure. In exchange, the use of a Count-Min Sketch introduces
+  a systematic overcount for k-mers; moreover, only the counts, and not the
+  k-mers, are stored. Here we analyze the speed, the memory usage, and the
+  miscount rate of khmer for generating k-mer frequency distributions and
+  retrieving k-mer counts for individual k-mers. We also compare the performance
+  of khmer to several other k-mer counting packages, including Tallymer,
+  Jellyfish, BFCounter, DSK, KMC, Turtle and KAnalyze. Finally, we examine the
+  effectiveness of profiling sequencing error, k-mer abundance trimming, and
+  digital normalization of reads in the context of high khmer false positive
+  rates. khmer is implemented in C++ wrapped in a Python interface, offers a
+  tested and robust API, and is freely available under the BSD license at
+  github.com/dib-lab/khmer.</p>",
+      number = "7",
+      doi = "10.1371/journal.pone.0101271"
+  }
 
 @article{adina2013,
 	Author = {Adina Chuang Howe and Jason Pell and Rosangela Canino-Koning and Rachel Mackelprang and Susannah Tringe and Janet Jansson and James M. Tiedje and C. Titus Brown},
@@ -549,3 +580,32 @@ CONTACT: pashadag@cse.psu.edu.},
 	Title = {GemSIM: general, error-model based simulator of next-generation sequencing data},
 	Volume = {13},
 	Year = {2012}}
+    
+@article{Lowe2015,
+	Author = {Lowe, E. K. and Swalla, B.J. and Brown, C.T.},
+	Date-Added = {2015-04-08 05:05:51 +0000},
+	Date-Modified = {2015-04-08 05:05:51 +0000},
+	Journal = {PeerJ Preprints},
+	Title = {{{E}valuating a lightweight transcriptome assembly pipeline on two closely related ascidian species.}},
+	Url = {http://dx.doi.org/10.7287/peerj.preprints.505v1},
+	Volume = {2},
+	Year = {2014},
+	Bdsk-Url-1 = {http://dx.doi.org/10.7287/peerj.preprints.505v1}}
+    
+@article{Howe2014,
+	Abstract = {The large volumes of sequencing data required to sample deeply the microbial communities of complex environments pose new challenges to sequence analysis. De novo metagenomic assembly effectively reduces the total amount of data to be analyzed but requires substantial computational resources. We combine two preassembly filtering approaches-digital normalization and partitioning-to generate previously intractable large metagenome assemblies. Using a human-gut mock community dataset, we demonstrate that these methods result in assemblies nearly identical to assemblies from unprocessed data. We then assemble two large soil metagenomes totaling 398 billion bp (equivalent to 88,000 Escherichia coli genomes) from matched Iowa corn and native prairie soils. The resulting assembled contigs could be used to identify molecular interactions and reaction networks of known metabolic pathways using the Kyoto Encyclopedia of Genes and Genomes Orthology database. Nonetheless, more than 60% of predicted proteins in assemblies could not be annotated against known databases. Many of these unknown proteins were abundant in both corn and prairie soils, highlighting the benefits of assembly for the discovery and characterization of novelty in soil biodiversity. Moreover, 80% of the sequencing data could not be assembled because of low coverage, suggesting that considerably more sequencing data are needed to characterize the functional content of soil.},
+	Author = {Howe, Adina Chuang and Jansson, Janet K and Malfatti, Stephanie A and Tringe, Susannah G and Tiedje, James M and Brown, C Titus},
+	Date-Added = {2015-04-08 05:05:51 +0000},
+	Date-Modified = {2015-04-08 05:05:51 +0000},
+	Doi = {10.1073/pnas.1402564111},
+	Journal = {Proc Natl Acad Sci U S A},
+	Journal-Full = {Proceedings of the National Academy of Sciences of the United States of America},
+	Month = {Apr},
+	Number = {13},
+	Pages = {4904-9},
+	Pmid = {24632729},
+	Pst = {ppublish},
+	Title = {Tackling soil diversity with the assembly of large, complex metagenomes},
+	Volume = {111},
+	Year = {2014},
+	Bdsk-Url-1 = {http://dx.doi.org/10.1073/pnas.1402564111}}
