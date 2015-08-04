@@ -16,7 +16,7 @@
 \usepackage{xifthen}
 
 % Define the versionDate and flogo commands
-\newcommand{\versionDate}{\footnotesize \textit{F1000Research} 2014 - DRAFT ARTICLE (PRE-SUBMISSION)}
+\newcommand{\versionDate}{\footnotesize \textit{F1000Research} 2015 - DRAFT ARTICLE (PRE-SUBMISSION)}
 \newcommand{\flogo}{\includegraphics[height=12pt]{F1000header.png}}
 
 % Define the switch to turn on review mode (wide margins)
@@ -123,15 +123,21 @@
 \rule{\textwidth}{1pt}\\ \textcolor{Orange}{\textbf{\abstractname}}}
 {\par\noindent\rule{\textwidth}{1pt}\end{minipage}}
 %
+%%%%%%
+%% LLT: minipages can't break across pages, so that's a problem. Use a mdframed without borders and 0pt margins instead -- these *can* break across pages.
+%%%%%
+\usepackage{mdframed}
 \makeatletter
 \renewcommand\@maketitle{%
-\begin{minipage}{0.95\textwidth}
+% \begin{minipage}{0.95\textwidth}
+\begin{mdframed}[linewidth=0pt,innerleftmargin=0pt,innerrightmargin=0.05\textwidth,innertopmargin=0pt,innerbottommargin=0pt]
 \vskip 2em
 \let\footnote\thanks 
 {\fontsize{20}{20}\usefont{OT1}{phv}{b}{n} \@title \par {\small{\@titlenote}} }
 \vskip 1.5em
 {\@author \par}
-\end{minipage}
+\end{mdframed}
+% \end{minipage}
 \vskip 1em \par
 }
 \makeatother
